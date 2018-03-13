@@ -1,5 +1,6 @@
 package com.futecamp.biel.futecamp.model.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -47,4 +48,19 @@ public class UsuarioDao extends SQLiteOpenHelper {
         Log.i(TAG, "Atualização da tabela " + TABELA);
 
     }
+
+    public void cadastrar(Usuario usuario) {
+        ContentValues values = new ContentValues();
+
+        values.put("nome", usuario.getNome());
+        values.put("telefone", usuario.getTelefone());
+        values.put("email", usuario.getEmail());
+        values.put("senha", usuario.getSenha());
+        values.put("endereco", usuario.getEndereco());
+        values.put("foto", usuario.getFoto());
+        getWritableDatabase().insert(TABELA,
+                null,
+                values);
+    }
+
 }
