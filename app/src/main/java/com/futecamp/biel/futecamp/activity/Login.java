@@ -1,7 +1,9 @@
-package com.futecamp.biel.futecamp;
+package com.futecamp.biel.futecamp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.futecamp.biel.futecamp.R;
 
 public class Login extends AppCompatActivity {
 

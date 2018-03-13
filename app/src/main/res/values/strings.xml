@@ -12,4 +12,9 @@
     <string name="endereco">ENDEREÇO</string>
     <string name="endereco_hint">Rua, Av., Beco...</string>
     <string name="cadastrar">CADASTRAR</string>
+
+    <string name="usuarioLogin">Usuário:</string>
+    <string name="usuarioLogin_hint">Digite seu email</string>
+    <string name="usuarioSenhaLogin">Senha:</string>
+    <string name="usuarioSenha_hint">Digite seu senha</string>
 </resources>
