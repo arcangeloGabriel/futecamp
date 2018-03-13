@@ -1,5 +1,8 @@
 package com.futecamp.biel.futecamp.model.entity;
 
+import com.futecamp.biel.futecamp.config.ConfiguracaoFirebase;
+import com.google.firebase.database.DatabaseReference;
+
 import java.io.Serializable;
 
 /**
@@ -15,6 +18,9 @@ public class Usuario implements Serializable{
     private String senha;
     private String endereco;
     private String foto;
+
+
+
 
 
     @Override
