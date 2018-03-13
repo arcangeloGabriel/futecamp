@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "342631848296",
+    "firebase_url": "https://futecamp.firebaseio.com",
+    "project_id": "futecamp",
+    "storage_bucket": "futecamp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342631848296:android:0cb18599973a6d17",
+        "android_client_info": {
+          "package_name": "com.futecamp.biel.futecamp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342631848296-f7rnjcn7q8s3edau82fjh05t9emr3nsk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.futecamp.biel.futecamp",
+            "certificate_hash": "4eb11a15b855acd6958e476133bc5649327da0c5"
+          }
+        },
+        {
+          "client_id": "342631848296-mojmffbdvh16u9nli6ldc7hmj8a8ritg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuGN3nvZx5vBMg0BtwdVFLjKdNwsweywo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342631848296-mojmffbdvh16u9nli6ldc7hmj8a8ritg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
