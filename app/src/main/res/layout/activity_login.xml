@@ -1,18 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.futecamp.biel.futecamp.Login">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        app:srcCompat="@drawable/fundo" />
+
+
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/senhaId"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="34dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:text="Usuário:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/usuarioId"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_toRightOf="@+id/textView"
+        android:ems="10"
+        android:hint="Digite seu Acesso"
+        android:inputType="textPersonName"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_centerVertical="true"
+        android:text="Senha:"
+        android:textColor="#000"
+        android:textSize="20dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/senhaId"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/usuarioId"
+        android:layout_alignStart="@+id/usuarioId"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="Digite sua senha"
+        android:inputType="textPassword"
+        android:textColor="#000" />
+
+    <Button
+        android:id="@+id/botaoEntrarId"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/senhaId"
+        android:layout_alignStart="@+id/senhaId"
+        android:layout_below="@+id/senhaId"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20dp"
+        android:text="Entrar"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/cadastrarUsuarioId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/senhaId"
+
+        android:layout_alignRight="@+id/senhaId"
+        android:layout_below="@+id/botaoEntrarId"
+        android:layout_marginTop="24dp"
+        android:text="Novo no Futebola? Crie uma conta?"
+        android:textColor="#000"
+        android:textSize="18dp" />
+
+
+</RelativeLayout>

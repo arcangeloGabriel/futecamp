@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">FuteCamp</string>
+    <string name="app_name">Futebola </string>
+    <string name="nome">NOME</string>
+    <string name="nome_hint">Nome completo</string>
+    <string name="telefone">TELEFONE</string>
+    <string name="telefone_hint">(xx) xxxxx-xxxx</string>
+    <string name="email">E-MAIL</string>
+    <string name="email_hint">Usuario@exemplo.com</string>
+    <string name="senha">SENHA</string>
+    <string name="senha_hint">Crie uma senha</string>
+
+    <string name="endereco">ENDEREÇO</string>
+    <string name="endereco_hint">Rua, Av., Beco...</string>
+    <string name="cadastrar">CADASTRAR</string>
 </resources>
