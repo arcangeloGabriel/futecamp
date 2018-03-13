@@ -1,4 +1,4 @@
-package com.futecamp.biel.futecamp.config;
+package com.futecamp.biel.futecamp.model.dao;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;

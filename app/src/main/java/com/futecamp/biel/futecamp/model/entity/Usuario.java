@@ -1,7 +1,8 @@
 package com.futecamp.biel.futecamp.model.entity;
 
-import com.futecamp.biel.futecamp.config.ConfiguracaoFirebase;
+import com.futecamp.biel.futecamp.model.dao.ConfiguracaoFirebase;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
 
 import java.io.Serializable;
 
@@ -11,7 +12,7 @@ import java.io.Serializable;
 
 public class Usuario implements Serializable{
 
-    private Long id;
+
     private String nome;
     private String telefone;
     private String email;
@@ -23,16 +24,10 @@ public class Usuario implements Serializable{
 
 
 
+
     @Override
     public String toString() {return nome;}
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;
@@ -58,10 +53,11 @@ public class Usuario implements Serializable{
         this.email = email;
     }
 
+   @Exclude
     public String getSenha() {
         return senha;
     }
-
+    @Exclude
     public void setSenha(String senha) {
         this.senha = senha;
     }

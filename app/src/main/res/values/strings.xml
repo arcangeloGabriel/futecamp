@@ -6,8 +6,11 @@
     <string name="telefone_hint">(xx) xxxxx-xxxx</string>
     <string name="email">E-MAIL</string>
     <string name="email_hint">Usuario@exemplo.com</string>
+
     <string name="senha">SENHA</string>
     <string name="senha_hint">Crie uma senha</string>
+    <string name="senha2">REPETI SENHA</string>
+    <string name="senha2_hint">REPETA SUA SENHA</string>
 
     <string name="endereco">ENDEREÇO</string>
     <string name="endereco_hint">Rua, Av., Beco...</string>

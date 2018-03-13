@@ -11,13 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.futecamp.biel.futecamp.R;
-import com.futecamp.biel.futecamp.config.ConfiguracaoFirebase;
+import com.futecamp.biel.futecamp.model.dao.ConfiguracaoFirebase;
 import com.futecamp.biel.futecamp.model.entity.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
@@ -41,31 +41,33 @@ public class Login extends AppCompatActivity {
         cadastrese.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this,CadastroUsuario_form.class);
+                Intent intent = new Intent(Login.this, CadastroUsuario_form.class);
                 startActivity(intent);
             }
         });
 
-        btEntrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!emailLogin.getText().equals("")&& !senhaLogin.getText().equals("")){
-
-                    usuario = new Usuario();
-                    usuario.setEmail(emailLogin.getText().toString());
-                    usuario.setSenha(senhaLogin.getText().toString());
-
-                    validarLogin();
 
 
+            btEntrar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!emailLogin.getText().equals("") && !senhaLogin.getText().equals("")) {
 
-                }else {
-                    Toast.makeText(Login.this, "preencha os campos de email e senha válidos", Toast.LENGTH_SHORT).show();
+                        usuario = new Usuario();
+                        usuario.setEmail(emailLogin.getText().toString());
+                        usuario.setSenha(senhaLogin.getText().toString());
+
+                        validarLogin();
+
+
+                    } else {
+                        Toast.makeText(Login.this, "preencha os campos de email e senha válidos", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-        });
+            });
 
-    }
+        }
+
     private void validarLogin(){
 
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
@@ -93,4 +95,14 @@ public class Login extends AppCompatActivity {
         finish();
     }
 
-       }
+    public Boolean usuarioLogado(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
+}
