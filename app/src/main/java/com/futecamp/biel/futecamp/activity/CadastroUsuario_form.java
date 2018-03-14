@@ -1,9 +1,11 @@
 package com.futecamp.biel.futecamp.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import com.futecamp.biel.futecamp.R;
 import com.futecamp.biel.futecamp.helper.Base64Custom;
 import com.futecamp.biel.futecamp.helper.Preferencias;
+import com.futecamp.biel.futecamp.helper.UsuarioHelper;
 import com.futecamp.biel.futecamp.model.dao.ConfiguracaoFirebase;
 import com.futecamp.biel.futecamp.model.entity.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,6 +43,45 @@ public class CadastroUsuario_form extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference reference;
     private Usuario usuario;
+
+    private UsuarioHelper helper;
+    private String localArquivoFoto;
+    private static final int FOTO_CONTATO = 12345;
+
+    @Override
+    protected void onRestoreInstanceState(Bundle bundle) {
+        super.onRestoreInstanceState(bundle);
+        if (bundle!=null){
+            localArquivoFoto = (String)
+                    bundle.getSerializable("localArquivoFoto");
+            helper.carregarFoto(localArquivoFoto);
+        }
+    }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        Log.d("ContatoForm", "onSaveInstanceState()");
+        outState.putSerializable("localArquivoFoto",
+                localArquivoFoto);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode,
+                                    int resultCode,
+                                    Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == FOTO_CONTATO){
+            if(resultCode == Activity.RESULT_OK){
+                helper.carregarFoto(localArquivoFoto);
+                Log.d("onActivityResult", "FOTO sucesso");
+            }else {
+                Log.d("onActivityResult", "FOTO cancelada");
+                localArquivoFoto = null;
+            }
+        }
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
